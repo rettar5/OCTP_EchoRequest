@@ -29,6 +29,6 @@ export class EchoRequest {
    * @returns {boolean}
    */
   static isValid(tweetData: OdnTweetData): boolean {
-    return tweetData.isReplyToMe() && tweetData.command.match(/^(echo)$/gi) && tweetData.action.match(/^(request)$/gi) ? true : false;
+    return false === tweetData.isRetweet && tweetData.isReplyToMe() && tweetData.command.match(/^(echo)$/gi) && tweetData.action.match(/^(request)$/gi) ? true : false;
   }
 }
